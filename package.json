@@ -1,24 +1,24 @@
 {
-  "name": "Webpack-Boilerplate",
+  "name": "Capstone-Javascript-APIs",
   "version": "1.0.0",
   "description": "",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "webpack serve --open"
+    "start": "webpack serve --open",
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ReshyResh/Webpack-Boilerplate.git"
+    "url": "git+https://github.com/ReshyResh/Capstone-Javascript-APIs.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ReshyResh/Webpack-Boilerplate/issues"
+    "url": "https://github.com/ReshyResh/Capstone-Javascript-APIs/issues"
   },
-  "homepage": "https://github.com/ReshyResh/Webpack-Boilerplate#readme",
+  "homepage": "https://github.com/ReshyResh/Capstone-Javascript-APIs#readme",
   "devDependencies": {
     "css-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
@@ -28,7 +28,6 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "jest": "^27.1.0",
     "lodash": "^4.17.21"
   }
 }
