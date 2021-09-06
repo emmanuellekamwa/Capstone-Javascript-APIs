@@ -39,6 +39,7 @@ footer>p {
 
 .popup {
   position: relative;
+  display: none;
 }
 
 .reservation {

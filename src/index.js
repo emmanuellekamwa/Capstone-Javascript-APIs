@@ -2,6 +2,7 @@
 import _ from 'lodash';
 import './style.css';
 import reservationsPopup from './reservationsPopup';
+import displayToggle from './toggle';
 
 const object = {
 symbol:	"BTCUSDT",
@@ -27,4 +28,10 @@ lastId:	1040812366,
 count:	1780854,
 }
 
-reservationsPopup(object);
+
+const button = document.getElementById('button');
+const popupWindow = document.getElementById('popup');
+button.onclick = () => {
+  reservationsPopup(object);
+  displayToggle(popupWindow);
+}

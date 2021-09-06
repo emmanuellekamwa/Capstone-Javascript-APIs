@@ -1,3 +1,4 @@
+import displayToggle from "./toggle";
 
 const reservationsPopup =  (object) => {
 
@@ -26,9 +27,7 @@ const reservationsPopup =  (object) => {
   reservation.innerHTML = img.outerHTML
   + name.outerHTML
   + stats.outerHTML;  
-  popupWindow.appendChild(reservation);
-  
-
+  popupWindow.appendChild(reservation);  
 }
 
 export default reservationsPopup;
