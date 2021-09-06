@@ -47,10 +47,11 @@ footer > p {
 }
 
 li>button {
-    width: 50%;
+    width: 30%;
     outline: none;
     border: 1px solid #999;
     margin: auto;
+    margin-top: auto;
 }
 
 li>img {

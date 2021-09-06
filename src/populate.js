@@ -17,6 +17,7 @@ export default (arr) => {
       buttonRes.setAttribute('onclick',`showRes(${element})`);
       buttonRes.innerText="Reservations";
       li.append(img);
+      li.append(buttonCom);
       li.append(buttonRes);
       parent.appendChild(li);
     });
