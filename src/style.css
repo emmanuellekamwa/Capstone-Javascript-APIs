@@ -1,32 +1,32 @@
 #nav-items {
-    display: flex;
-    list-style: none;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #main-nav {
-    margin: 0 20px 0 20px;
-    width: 50%;
+  margin: 0 20px 0 20px;
+  width: 50%;
 }
 
 #main-logo {
-    width: 100px;
-    height: 100px;
-    background-image: url('./img/logo.png');
-    background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  background-image: url("./img/logo.png");
+  background-repeat: no-repeat;
 }
 
 footer {
-    height: 100px;
-    align-items: center;
-    border: 5px solid #000;
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    width: 98%;
+  height: 100px;
+  align-items: center;
+  border: 5px solid #000;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  width: 98%;
 }
 
-footer>p {
-    margin-left: 50px;
+footer > p {
+  margin-left: 50px;
 }
