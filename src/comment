@@ -1,0 +1,22 @@
+const section = document.getElementById('comment')
+const ul = document.createElement('ul')
+let arr = [['dan', 'good price'],['john', 'hmmm l love this']]
+
+
+export default async() => {
+  if(arr.length){
+      arr.forEach((comment) => {
+        const li = document.createElement('li')
+        li.classList.add('list-group-item');
+        const text = `
+          <div class="fw-bold text-start">
+            ${comment[0]} : ${ comment[1]}
+          </div>
+        </div>`;
+        li.innerHTML = text;
+        ul.appendChild(li);
+      })
+  }
+  section.classList.add('comment');
+   section.appendChild(ul);
+}

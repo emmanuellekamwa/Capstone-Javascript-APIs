@@ -10,7 +10,9 @@ module.exports = {
   ],
   devServer: {
     contentBase: './dist',
+    port: 3030
   },
+  mode: 'development',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
