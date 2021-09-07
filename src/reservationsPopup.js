@@ -1,7 +1,5 @@
-import getReservations from './getReservations';
 import images from './images';
 import showReservations from './showReservations';
-// import getReservations from './getReservations';
 
 const reservationsPopup = async (object, id) => {
   const popupWindow = document.getElementById('popup');
