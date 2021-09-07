@@ -2,10 +2,6 @@
   box-sizing: border-box;
 }
 
-button:hover {
-  cursor: pointer;
-}
-
 #nav-items {
   display: flex;
   list-style: none;
@@ -35,7 +31,7 @@ footer {
   width: 98%;
 }
 
-footer>p {
+footer p {
   margin-left: 50px;
 }
 
@@ -94,6 +90,10 @@ li > button {
   border: 1px solid #999;
   margin: auto;
   margin-top: auto;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 li > img {
