@@ -1,12 +1,12 @@
 import images from './images'
-const reservationsPopup =  (object) => {
+const reservationsPopup =   (object) => {
   const popupWindow = document.getElementById('popup');
   popupWindow.className = "popup";
   const reservation = document.createElement('div');
   reservation.className = 'reservation';
   const img = document.createElement('img');
   const name = document.createElement('h3');
-  img.setAttribute('src', images(object));
+  img.setAttribute('src', images(object.symbol));
   name.innerText = object.symbol;
   const stats = document.createElement('div');
   stats.className = 'stats';

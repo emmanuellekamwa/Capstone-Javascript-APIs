@@ -1,4 +1,6 @@
 import check from './images';
+import reservationsPopup from './reservationsPopup';
+import displayToggle from './toggle';
 
 export default (arr) => {
   const toGet = [11, 12, 564, 98, 308, 190];
@@ -13,8 +15,13 @@ export default (arr) => {
     const buttonRes = document.createElement('button');
     const buttonCom = document.createElement('button');
     buttonCom.setAttribute('onclick', `showCom(${element})`);
-    buttonCom.innerText = 'Comments';
-    buttonRes.setAttribute('onclick', `showRes(${element})`);
+    buttonCom.innerText = 'Comments';  
+    const popupWindow = document.getElementById('popup');
+    popupWindow.style.display= 'none';
+    buttonRes.addEventListener('click', () => {
+      reservationsPopup(arr[element]);    
+      displayToggle(popupWindow);
+    });
     buttonRes.innerText = 'Reservations';
     li.append(img);
     li.append(buttonCom);
