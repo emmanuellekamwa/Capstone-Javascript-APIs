@@ -17,7 +17,7 @@
 #main-logo {
   width: 100px;
   height: 100px;
-  background-image: url("./img/logo.png");
+  background-image: url("./img/logo1.png");
   background-repeat: no-repeat;
 }
 
@@ -68,4 +68,33 @@ footer>p {
   width: 50%;
   display: flex;
   justify-content: center;
+}
+
+#main-section {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 10% 0 10%;
+}
+
+.item {
+  width: 30%;
+  height: 300px;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+}
+
+li > button {
+  width: 30%;
+  outline: none;
+  border: 1px solid #999;
+  margin: auto;
+  margin-top: auto;
+}
+
+li > img {
+  width: 100px;
+  height: 100px;
+  margin: auto;
 }
