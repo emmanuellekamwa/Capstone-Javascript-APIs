@@ -13,18 +13,46 @@ export default async (arr) => {
   toGet.forEach((element) => {
     const li = document.createElement('li');
     li.classList.add('item');
-    li.innerHTML = `<p>${arr[element].symbol}</p>`; // Get Symbol from the remote API data
+    li.innerHTML = `<p class="coin-title">${arr[element].symbol}</p>`; // Get Symbol from the remote API data
     const img = document.createElement('img');
     const buttonRes = document.createElement('button');
     const buttonCom = document.createElement('button');
     const heart = document.createElement('aside');
     heart.id = element;
     heart.innerHTML = '<i class="far fa-heart"></i>';
-    heart.addEventListener('click', async () => {
+    heart.addEventListener('click', async(e) => {
+      const hrt = document.createElement('article');
+      hrt.innerHTML = '<i class="fas fa-heart">';
+      hrt.id = 'little-heart';
+      hrt.style.left = `${e.clientX-3}px`;
+      hrt.style.top = `${e.clientY-5}px`;
+      setTimeout(() => {
+        hrt.classList.add('fade');
+      }, 400);
+      setTimeout(() => {
+        hrt.classList.add('left-1');
+      }, 100);
+      setTimeout(() => {
+        hrt.classList.add('left-2');
+      }, 400);
+      document.body.appendChild(hrt);
+      setTimeout(() => {
+        document.body.removeChild(document.getElementById('little-heart'));
+      }, 1500);
       await sendLike(element); // New like on click
       const toEdit = document.getElementById(element);
       const num = toEdit.innerHTML.replace(/^\D+/g, '');
       toEdit.innerHTML = `<i class="far fa-heart"></i>${Number(num) + 1}`;
+    });
+    heart.addEventListener('mouseover',() => {
+      const toEdit = document.getElementById(element);
+      const num = toEdit.innerHTML.replace(/^\D+/g, '');
+      toEdit.innerHTML = `<i class="fas fa-heart"></i>${num}`;
+    });
+    heart.addEventListener('mouseleave',() => {
+      const toEdit = document.getElementById(element);
+      const num = toEdit.innerHTML.replace(/^\D+/g, '');
+      toEdit.innerHTML = `<i class="far fa-heart"></i>${num}`;
     });
 
     likeArr.forEach((el) => {

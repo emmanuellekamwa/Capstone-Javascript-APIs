@@ -2,31 +2,42 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Kanit', sans-serif;
+  background: #4f5555;
+  background-repeat: no-repeat;
+  color: #fff;
+  overflow-x: hidden;
+  margin: 0;
+}
+
 #nav-items {
   display: flex;
   list-style: none;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  background: rgba(12,12,12,0.5);
+  margin-top: 0;
 }
 
 #main-nav {
-  margin: 0 20px 0 20px;
-  width: 50%;
+  box-shadow: 0px 6px 20px 4px rgba(29, 138, 51, 0.5);
 }
 
 #main-logo {
-  width: 100px;
-  height: 100px;
-  background-image: url("./img/logo1.png");
+  width: 50px !important;
+  height: 50px !important;
+  background-image: url("./img/logo.png");
   background-repeat: no-repeat;
+  background-size: cover;
+  border: none !important;
+  margin: 10px 0 10px 0;
 }
 
 footer {
   height: 100px;
   align-items: center;
   border: 5px solid #000;
-  position: absolute;
-  bottom: 0;
   display: flex;
   width: 98%;
 }
@@ -42,6 +53,7 @@ footer p {
 }
 
 .reservation {
+  color: #000;
   background-color: white;
   border: 5px solid black;
   height: auto;
@@ -76,28 +88,122 @@ footer p {
   margin: 0 10% 0 10%;
 }
 
+#main-title {
+  text-align: center;
+  font-size: 2em;
+}
+
 .item {
-  width: 30%;
-  height: 300px;
+  width: 90%;
+  height: 350px;
   text-align: center;
   display: flex;
   flex-flow: column;
+  background: rgba(0, 0, 0, 0.51);
+  margin: 10px auto 10px auto;
+  transition: all 0.5s;
+  box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+.item:hover {
+  background: rgba(17, 14, 45, 0.74);
+}
+
+.coin-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.5em;
+}
+
+#nav-items > li {
+  height: 50px;
+  width: 150px;
+  text-align: center;
+  line-height: 45px;
+  font-size: 1em;
+  font-family: 'Kanit', sans-serif;
+  cursor: pointer;
+}
+
+aside {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+  margin: auto;
+  align-items: center;
 }
 
 li > button {
-  width: 30%;
+  width: 80%;
+  color: #fff;
   outline: none;
   border: 1px solid #999;
   margin: auto;
+  background:rgba(4, 255, 55, 0.5);
   margin-top: auto;
+  height: 25px;
+  transition: all 0.5s;
+  border: 1px solid rgba(22, 21, 13, 0.226);
+  border-radius: 8px;
 }
 
-button:hover {
+li > button:hover {
   cursor: pointer;
+  background:rgba(0, 0, 0, 0.658);
+  color: white;
 }
 
 li > img {
   width: 100px;
   height: 100px;
   margin: auto;
+}
+
+#little-heart {
+  position: absolute;
+  color: red;
+  font-size: 1.5em;
+  visibility: visible;
+  opacity: 1;
+  transition: all 1.5s;
+  text-align: center;
+  z-index: 99;
+}
+
+.fade {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+.left-1 {
+  transform: translateX(-400px) translateY(-400px);
+}
+
+.left-2 {
+  transform: translateX(500px) translateY(-800px);
+}
+
+@media only screen and (min-width: 1100px) {
+  li > button {
+    width: 30%;
+  }
+  .item {
+    width: 30% !important;
+    margin: 10px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  li > button {
+    width: 30%;
+  }
+  .item {
+    width: 40%;
+  }
+  #main-logo {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  #nav-items > li {
+    font-size: 2em;
+  }
 }
