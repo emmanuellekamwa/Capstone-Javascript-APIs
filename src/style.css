@@ -31,31 +31,31 @@ footer > p {
   margin-left: 50px;
 }
 
-#main-section { 
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    margin: 0 10% 0 10%;
+#main-section {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 10% 0 10%;
 }
 
 .item {
-    width: 30%;
-    height: 300px;
-    text-align: center;
-    display: flex;
-    flex-flow: column;
+  width: 30%;
+  height: 300px;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
 }
 
-li>button {
-    width: 30%;
-    outline: none;
-    border: 1px solid #999;
-    margin: auto;
-    margin-top: auto;
+li > button {
+  width: 30%;
+  outline: none;
+  border: 1px solid #999;
+  margin: auto;
+  margin-top: auto;
 }
 
-li>img {
-    width: 100px;
-    height: 100px;
-    margin: auto;
+li > img {
+  width: 100px;
+  height: 100px;
+  margin: auto;
 }
