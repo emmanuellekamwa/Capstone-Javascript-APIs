@@ -1,6 +1,7 @@
 /* eslint no-unused-vars:0 */
 import _, { divide } from 'lodash';
 import './style.css';
+import add from './addcomment'
 
 
 import call from './getData';
@@ -20,3 +21,18 @@ const getArr = async () => {
 document.addEventListener('DOMContentLoaded', async () => {
   populate(await getArr());
 });
+
+const userName = document.getElementById('name');
+const userComment = document.getElementById('feedback');
+
+document.addEventListener('click', async () => {
+    const commentData = {
+      user: userName.value,
+      comment: userComment.value,
+    };
+    const commentAdded = await add(commentData);
+    if (commentAdded) {
+        populate(await getArr());
+        console.log(commentData);
+    }
+  });

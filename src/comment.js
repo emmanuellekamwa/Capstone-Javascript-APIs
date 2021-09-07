@@ -40,7 +40,7 @@ export default async (object) => {
             <input
               type="text"
               class="form-control m-2"
-              id="message"
+              id="feedback"
               placeholder="message"
             />
             <label for="message">Your message</label>

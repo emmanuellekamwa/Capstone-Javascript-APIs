@@ -21,6 +21,7 @@ export default (arr) => {
         displayComment(arr[element]);
         displayToggle(section);
     })
+    buttonCom.className = 'submit-btn';
     buttonCom.innerText = 'Comments';
     const popupWindow = document.getElementById('popup');
     popupWindow.style.display = 'none';
