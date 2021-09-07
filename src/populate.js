@@ -1,7 +1,7 @@
 import check from "./images";
 
 export default (arr) => {
-    const toGet = [11,12,564,98,308,436];
+    const toGet = [11,12,564,98,308,190];
     const parent = document.getElementById('main-section');
     parent.innerHTML = '';
     toGet.forEach((element) => {

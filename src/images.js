@@ -1,29 +1,18 @@
-import BTCUSDT from './img/BTCUSDT.png';
-import ETHUSDT from './img/ETHUSDT.png';
-import DOGEUSDT from './img/DOGEUSDT.png';
-import LINKUSDT from './img/LINKUSDT.png';
-import BNBUSDT from './img/BNBUSDT.png';
-import XRPUSDT from './img/XRPUSDT.png';
-
 export default (coin) => {
     switch(coin){
         case 'BTCUSDT':
-            return BTCUSDT;
-            break;
+            return 'https://s2.coinmarketcap.com/static/img/coins/200x200/1.png';
         case 'ETHUSDT':
-            return ETHUSDT;
-            break;
+            return 'https://s2.coinmarketcap.com/static/img/coins/200x200/1027.png';
         case 'DOGEUSDT':
-            return DOGEUSDT;
-            break;
+            return 'https://s2.coinmarketcap.com/static/img/coins/200x200/74.png';
         case 'LINKUSDT':
-            return LINKUSDT;
-            break;
+            return 'https://s2.coinmarketcap.com/static/img/coins/200x200/1975.png';
         case 'BNBUSDT':
-            return BNBUSDT;
-            break;
+            return 'https://s2.coinmarketcap.com/static/img/coins/200x200/1839.png';
         case 'XRPUSDT':
-            return XRPUSDT;
-            break;
+            return 'https://s2.coinmarketcap.com/static/img/coins/200x200/52.png';
+        case 'LTCUSDT':
+            return 'https://s2.coinmarketcap.com/static/img/coins/200x200/2.png';
       }
   }
