@@ -5,5 +5,5 @@ import call from './getData';
 import populate from './populate';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  populate(await call());  // Call for the remote API
+  populate(await call()); // Call for the remote API
 });
