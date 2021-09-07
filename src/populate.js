@@ -3,7 +3,7 @@ import likes from './likes';
 import sendLike from './sendLike';
 import reservationsPopup from './reservationsPopup';
 import displayToggle from './toggle';
-import displayComment from './comment'
+import displayComment from './comment';
 
 export default async (arr) => {
   const toGet = [11, 12, 564, 98, 308, 190]; // Array of crypto to get
@@ -21,9 +21,9 @@ export default async (arr) => {
     const section = document.getElementById('popup');
     section.style.display = 'none';
     buttonCom.addEventListener('click', () => {
-        displayComment(arr[element]);
-        displayToggle(section);
-    })
+      displayComment(arr[element]);
+      displayToggle(section);
+    });
     buttonCom.className = 'submit-btn';
     const heart = document.createElement('aside');
     heart.id = element;

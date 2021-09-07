@@ -1,13 +1,9 @@
 import images from './images';
-let arr = [
-  ['dan', 'good price'],
-  ['john', 'hmmm l love this'],
-];
 
 export default async (object) => {
-  //display the coin details
-  const section = document.getElementById('popup')
-  const element = document.createElement('div')
+  // display the coin details
+  const section = document.getElementById('popup');
+  const element = document.createElement('div');
   const img = document.createElement('img');
   const name = document.createElement('h3');
   img.setAttribute('src', images(object.symbol));
@@ -19,11 +15,11 @@ export default async (object) => {
        <p>High price: ${object.highPrice}</p>
        <p>Low price: ${object.lastPrice}</p>
       </div>`;
-   element.innerHTML = img.outerHTML
+  element.innerHTML = img.outerHTML
    + name.outerHTML
    + display;
-   element.className = 'imgpos';
-//  display the comment form
+  element.className = 'imgpos';
+  //  display the comment form
   const div = document.createElement('div');
   const txt = `<div>
         <form>

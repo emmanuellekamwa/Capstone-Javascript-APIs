@@ -17,7 +17,7 @@
 #main-logo {
   width: 100px;
   height: 100px;
-  background-image: url("./img/logo1.png");
+  background-image: url('./img/logo1.png');
   background-repeat: no-repeat;
 }
 
@@ -38,12 +38,12 @@ footer p {
 /* Reservations popup */
 
 .popup,
-.comment{
+.comment {
   position: relative;
 }
 
-.reservation, 
-.commentspage{
+.reservation,
+.commentspage {
   background-color: white;
   border: 5px solid black;
   height: auto;
@@ -71,8 +71,7 @@ footer p {
   justify-content: center;
 }
 
-
-.form{
+.form {
   display: contents;
   justify-content: center;
   text-align: center;
