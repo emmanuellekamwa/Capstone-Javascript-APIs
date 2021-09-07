@@ -1,6 +1,9 @@
+import getReservations from './getReservations';
 import images from './images';
+import showReservations from './showReservations';
+// import getReservations from './getReservations';
 
-const reservationsPopup = (object) => {
+const reservationsPopup = async (object, id) => {
   const popupWindow = document.getElementById('popup');
   popupWindow.className = 'popup';
   const reservation = document.createElement('div');
@@ -26,6 +29,7 @@ const reservationsPopup = (object) => {
   reservation.innerHTML = img.outerHTML
   + name.outerHTML
   + stats.outerHTML;
+  showReservations(reservation, id);
   popupWindow.appendChild(reservation);
 };
 
