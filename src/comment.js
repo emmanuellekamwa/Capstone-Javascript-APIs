@@ -6,7 +6,7 @@ let arr = [
 
 export default async (object) => {
   //display the coin details
-  const section = document.getElementById('comment')
+  const section = document.getElementById('popup')
   const element = document.createElement('div')
   const img = document.createElement('img');
   const name = document.createElement('h3');
@@ -18,7 +18,7 @@ export default async (object) => {
        <p>Open price: ${object.openPrice}</p>
        <p>High price: ${object.highPrice}</p>
        <p>Low price: ${object.lastPrice}</p>
-      </div>`
+      </div>`;
    element.innerHTML = img.outerHTML
    + name.outerHTML
    + display;
@@ -55,6 +55,6 @@ export default async (object) => {
       </div>`;
   div.innerHTML = txt;
   section.appendChild(element);
-   section.className = 'commentspage';
+  section.className = 'commentspage';
   section.appendChild(div);
 };
