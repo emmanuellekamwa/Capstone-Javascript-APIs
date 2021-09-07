@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 #nav-items {
   display: flex;
   list-style: none;
@@ -27,8 +31,42 @@ footer {
   width: 98%;
 }
 
-footer > p {
+footer p {
   margin-left: 50px;
+}
+
+/* Reservations popup */
+
+.popup {
+  position: relative;
+}
+
+.reservation {
+  background-color: white;
+  border: 5px solid black;
+  height: auto;
+  padding: 15px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.stats * {
+  width: 50%;
+  display: flex;
+  justify-content: center;
 }
 
 #main-section {
@@ -52,6 +90,10 @@ li > button {
   border: 1px solid #999;
   margin: auto;
   margin-top: auto;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 li > img {

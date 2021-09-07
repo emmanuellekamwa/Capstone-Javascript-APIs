@@ -3,6 +3,8 @@ import likes from './likes';
 import sendLike from './sendLike';
 import populate from './populate';
 import call from './getData';
+import reservationsPopup from './reservationsPopup';
+import displayToggle from './toggle';
 
 export default async (arr) => {
   const toGet = [11, 12, 564, 98, 308, 190];                                // Array of crypto to get
@@ -35,8 +37,11 @@ export default async (arr) => {
       showCom(element);                                                      // Show comments
     });
     buttonCom.innerText = 'Comments';
+    const popupWindow = document.getElementById('popup');
+    popupWindow.style.display = 'none';
     buttonRes.addEventListener('click', () => {
-      showRes(element);                                                      // Show reservations                               
+      reservationsPopup(arr[element]);
+      displayToggle(popupWindow);
     });
     buttonRes.innerText = 'Reservations';
     li.append(img);
