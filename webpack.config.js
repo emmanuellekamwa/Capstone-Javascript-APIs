@@ -11,6 +11,7 @@ module.exports = {
   ],
   devServer: {
     static: './dist',
+    port: 3030,
   },
   output: {
     filename: 'main.js',

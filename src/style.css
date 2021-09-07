@@ -48,7 +48,8 @@ footer p {
 
 /* Reservations popup */
 
-.popup {
+.popup,
+.comment {
   position: relative;
 }
 
@@ -79,6 +80,12 @@ footer p {
   width: 50%;
   display: flex;
   justify-content: center;
+}
+
+.form {
+  display: contents;
+  justify-content: center;
+  text-align: center;
 }
 
 #main-section {
