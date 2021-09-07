@@ -1,4 +1,4 @@
-import images from './images'
+import images from './images';
 
 const reservationsPopup = (object) => {
   const popupWindow = document.getElementById('popup');
@@ -25,8 +25,8 @@ const reservationsPopup = (object) => {
   + lowPrice.outerHTML;
   reservation.innerHTML = img.outerHTML
   + name.outerHTML
-  + stats.outerHTML;  
+  + stats.outerHTML;
   popupWindow.appendChild(reservation);
-}
+};
 
 export default reservationsPopup;

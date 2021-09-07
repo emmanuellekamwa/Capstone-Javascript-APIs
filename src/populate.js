@@ -19,7 +19,7 @@ export default (arr) => {
     const popupWindow = document.getElementById('popup');
     popupWindow.style.display = 'none';
     buttonRes.addEventListener('click', () => {
-      reservationsPopup(arr[element]);  
+      reservationsPopup(arr[element]);
       displayToggle(popupWindow);
     });
     buttonRes.innerText = 'Reservations';
