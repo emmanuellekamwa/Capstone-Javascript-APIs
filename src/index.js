@@ -18,4 +18,3 @@ const getArr = async () => {
 document.addEventListener('DOMContentLoaded', async () => {
   populate(await getArr());
 });
-

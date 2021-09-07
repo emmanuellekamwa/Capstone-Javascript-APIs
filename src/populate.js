@@ -15,11 +15,11 @@ export default (arr) => {
     const buttonRes = document.createElement('button');
     const buttonCom = document.createElement('button');
     buttonCom.setAttribute('onclick', `showCom(${element})`);
-    buttonCom.innerText = 'Comments';  
+    buttonCom.innerText = 'Comments';
     const popupWindow = document.getElementById('popup');
-    popupWindow.style.display= 'none';
+    popupWindow.style.display = 'none';
     buttonRes.addEventListener('click', () => {
-      reservationsPopup(arr[element]);    
+      reservationsPopup(arr[element]);  
       displayToggle(popupWindow);
     });
     buttonRes.innerText = 'Reservations';
