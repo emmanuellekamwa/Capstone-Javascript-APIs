@@ -10,7 +10,7 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: './dist',
+    static: './dist',
   },
   output: {
     filename: 'main.js',

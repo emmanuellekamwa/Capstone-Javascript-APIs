@@ -41,7 +41,7 @@ export default async (arr) => {
     const popupWindow = document.getElementById('popup');
     popupWindow.style.display = 'none';
     buttonRes.addEventListener('click', () => {
-      reservationsPopup(arr[element]);
+      reservationsPopup(arr[element], element);
       displayToggle(popupWindow);
     });
     buttonRes.innerText = 'Reservations';
