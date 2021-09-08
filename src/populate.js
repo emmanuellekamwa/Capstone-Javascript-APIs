@@ -5,8 +5,7 @@ import reservationsPopup from './reservationsPopup';
 import displayToggle from './toggle';
 import displayComment from './comment';
 
-export default async (arr) => {
-  const toGet = [11, 12, 564, 98, 308, 190]; // Array of crypto to get
+export default async (arr,toGet) => {
   const title = document.getElementById('main-title');
   const parent = document.getElementById('main-section');
   parent.innerHTML = ''; // Clear parent to prevent continuous appending
@@ -89,4 +88,6 @@ export default async (arr) => {
   });
   title.innerHTML = '';
   title.innerHTML = `Total coins:${parent.childElementCount}`; // Append number of elements displayed on the page
+  let leng = toGet.length;
+  return leng;
 };
