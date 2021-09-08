@@ -12,7 +12,7 @@ import showReservations from './showReservations';
 import reservationsForm from './reservationsForm';
 import addReservation from './addReservation';
 
-export default async (arr,toGet) => {
+export default async (arr, toGet) => {
   const title = document.getElementById('main-title');
   const parent = document.getElementById('main-section');
   parent.innerHTML = ''; // Clear parent to prevent continuous appending
@@ -60,12 +60,12 @@ export default async (arr,toGet) => {
     const heart = document.createElement('aside');
     heart.id = element;
     heart.innerHTML = '<i class="far fa-heart"></i>';
-    heart.addEventListener('click', async(e) => {
+    heart.addEventListener('click', async (e) => {
       const hrt = document.createElement('article');
       hrt.innerHTML = '<i class="fas fa-heart">';
       hrt.id = 'little-heart';
-      hrt.style.left = `${e.clientX-3}px`;
-      hrt.style.top = `${e.clientY-5}px`;
+      hrt.style.left = `${e.clientX - 3}px`;
+      hrt.style.top = `${e.clientY - 5}px`;
       setTimeout(() => {
         hrt.classList.add('fade');
       }, 400);
@@ -84,12 +84,12 @@ export default async (arr,toGet) => {
       const num = toEdit.innerHTML.replace(/^\D+/g, '');
       toEdit.innerHTML = `<i class="far fa-heart"></i>${Number(num) + 1}`;
     });
-    heart.addEventListener('mouseover',() => {
+    heart.addEventListener('mouseover', () => {
       const toEdit = document.getElementById(element);
       const num = toEdit.innerHTML.replace(/^\D+/g, '');
       toEdit.innerHTML = `<i class="fas fa-heart"></i>${num}`;
     });
-    heart.addEventListener('mouseleave',() => {
+    heart.addEventListener('mouseleave', () => {
       const toEdit = document.getElementById(element);
       const num = toEdit.innerHTML.replace(/^\D+/g, '');
       toEdit.innerHTML = `<i class="far fa-heart"></i>${num}`;
@@ -145,6 +145,6 @@ export default async (arr,toGet) => {
   });
   title.innerHTML = '';
   title.innerHTML = `Total coins:${parent.childElementCount}`; // Append number of elements displayed on the page
-  let leng = toGet.length;
+  const leng = toGet.length;
   return leng;
 };

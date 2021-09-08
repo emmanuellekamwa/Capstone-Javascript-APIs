@@ -2,3 +2,4 @@
 .hintrc
 .eslintrc.json
 node_modules/
+coverage/
