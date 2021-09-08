@@ -7,18 +7,16 @@ export default async () => {
               type="text"
               class="form-control "
               id="name"
-              placeholder="name"
+              placeholder="Username"
             />
-            <label for="name">Your name</label>
           </div>
           <div class="form-floating">
             <input
               type="text"
               class="form-control "
               id="feedback"
-              placeholder="message"
+              placeholder="Comment"
             />
-            <label for="message">Your message</label>
           </div>
           <button
             type="button"

@@ -55,22 +55,44 @@ footer p {
 
 .popup {
   position: relative;
-  display: none;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.invisible {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.visible {
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .reservation {
   color: #000;
 }
 
+#reservationList,
+#commentlist {
+  height: 100px;
+  overflow-y: scroll;
+  width: 400px;
+}
+
+hr {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .wrapper {
-  background-color: white;
+  background-color: rgba(21, 18, 28, 0.96);
   border: 5px solid black;
   height: 90%;
   width: 80%;
   padding: 15px;
   position: fixed;
   z-index: 10;
-  color: #000;
+  color: #fff;
   left: 50%;
   transform: translateX(-50%);
   top: 5%;
@@ -81,20 +103,6 @@ footer p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.stats,
-.coin-details {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.stats *,
-.coin-details {
-  width: 50%;
-  display: flex;
-  justify-content: center;
 }
 
 .form {
@@ -180,7 +188,7 @@ li > img {
 }
 
 #little-heart {
-  position: absolute;
+  position: fixed;
   color: red;
   font-size: 1.5em;
   visibility: visible;
@@ -259,9 +267,44 @@ form input {
   font-size: 1.2rem;
   width: 100%;
   margin: 5px;
+  background: rgba(81, 81, 81, 0.87);
+  outline: none;
+  border: 0;
+  color: #fff;
+  border: 2px solid rgb(0, 0, 0);
 }
 
 .blurred {
   filter: blur(10px);
   pointer-events: none;
+}
+
+#error-popup {
+  position: fixed;
+  color: #fff;
+  font-size: 1.5em;
+  font-family: inherit;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin-top: 250px;
+  width: 400px;
+  height: 60px;
+  visibility: visible;
+  opacity: 1;
+  transition: all 3s;
+  border-radius: 4%;
+  text-align: center;
+  line-height: 60px;
+  z-index: 99;
+  box-shadow: 5px 6px 1px rgba(0, 0, 0);
+}
+
+.red {
+  background: red;
+}
+
+.green {
+  background: green;
 }

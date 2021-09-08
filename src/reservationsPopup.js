@@ -19,10 +19,10 @@ const reservationsPopup = async (object) => {
   const openPrice = document.createElement('p');
   const highPrice = document.createElement('p');
   const lowPrice = document.createElement('p');
-  lastPrice.innerText = `Last price: ${object.lastPrice}`;
-  openPrice.innerText = `Open price: ${object.openPrice}`;
-  highPrice.innerText = `High price: ${object.highPrice}`;
-  lowPrice.innerText = `Low price: ${object.lastPrice}`;
+  lastPrice.innerText = `Last price: ${parseFloat(object.lastPrice).toFixed(3)}`;
+  openPrice.innerText = `Open price: ${parseFloat(object.openPrice).toFixed(3)}`;
+  highPrice.innerText = `High price: ${parseFloat(object.highPrice).toFixed(3)}`;
+  lowPrice.innerText = `Low price: ${parseFloat(object.lastPrice).toFixed(3)}`;
   stats.innerHTML = lastPrice.outerHTML
   + openPrice.outerHTML
   + highPrice.outerHTML

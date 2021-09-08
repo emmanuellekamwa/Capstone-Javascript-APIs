@@ -11,6 +11,7 @@ import add from './addcomment';
 import showReservations from './showReservations';
 import reservationsForm from './reservationsForm';
 import addReservation from './addReservation';
+import error from './error';
 
 export default async (arr, toGet) => {
   const title = document.getElementById('main-title');
@@ -26,7 +27,6 @@ export default async (arr, toGet) => {
     const buttonCom = document.createElement('button');
     const commentPopUp = document.getElementById('popup');
 
-    commentPopUp.style.display = 'none';
     buttonCom.addEventListener('click', async () => {
       coinDetails.innerHTML = '';
       formContainer.innerHTML = '';
@@ -42,16 +42,21 @@ export default async (arr, toGet) => {
             username: userName.value,
             comment: userMessage.value,
           };
-          await add(commentData);
-          const ul = document.getElementById('commentlist');
-          const li = document.createElement('li');
-          li.innerText = `${commentData.username} : ${commentData.comment}`;
-          ul.appendChild(li);
-          userName.value = '';
-          userMessage.value = '';
+          if(userName.value != '' && userMessage != ''){
+            await add(commentData);
+            const ul = document.getElementById('commentlist');
+            const li = document.createElement('li');
+            li.innerText = `${commentData.username} : ${commentData.comment}`;
+            ul.appendChild(li);
+            userName.value = '';
+            userMessage.value = '';
+            error('Comment added!','green');
+          }
+          else {
+            error('Invalid input!','red');
+          }
         });
       }, 100);
-
       const userName = document.getElementById('name');
       const userMessage = document.getElementById('feedback');
     });
@@ -102,12 +107,8 @@ export default async (arr, toGet) => {
     });
 
     img.setAttribute('src', check(arr[element].symbol));
-    buttonCom.addEventListener('click', () => {
-      // showCom(element); // Show comments
-    });
     buttonCom.innerText = 'Comments';
     const popupWindow = document.getElementById('popup');
-    popupWindow.style.display = 'none';
     const coinDetails = document.getElementById('coin-details');
     const formContainer = document.getElementById('form-container');
     buttonRes.addEventListener('click', async () => {
@@ -127,13 +128,19 @@ export default async (arr, toGet) => {
       const reserve = document.getElementById('reserve');
 
       reserve.onclick = async () => {
-        await addReservation(element, nameInput.value, startInput.value, endInput.value);
-        const restList = document.getElementById('reservationList');
-        const newItem = document.createElement('li');
-        const counter = document.getElementById('counter');
-        counter.innerText = Number(counter.textContent) + 1;
-        newItem.innerHTML = `<li>${startInput.value} - ${endInput.value} by ${nameInput.value}</li>`;
-        restList.appendChild(newItem);
+        if(nameInput.value != '' && startInput.value != '' && endInput.value != ''){
+          await addReservation(element, nameInput.value, startInput.value, endInput.value);
+          const restList = document.getElementById('reservationList');
+          const newItem = document.createElement('li');
+          const counter = document.getElementById('counter');
+          counter.innerText = Number(counter.textContent) + 1;
+          newItem.innerHTML = `<li>${startInput.value} - ${endInput.value} by ${nameInput.value}</li>`;
+          restList.appendChild(newItem);
+          error('Comment added!','green');
+          }
+          else {
+            error('Invalid input!','red');
+          }
       };
     });
     buttonRes.innerText = 'Reservations';
