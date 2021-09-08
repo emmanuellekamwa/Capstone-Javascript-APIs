@@ -53,8 +53,7 @@ footer p {
 
 /* Reservations popup */
 
-.popup,
-.comment {
+.popup {
   position: relative;
   display: none;
 }
@@ -84,13 +83,15 @@ footer p {
   align-items: center;
 }
 
-.stats {
+.stats,
+.coin-details {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
-.stats * {
+.stats *,
+.coin-details {
   width: 50%;
   display: flex;
   justify-content: center;

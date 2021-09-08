@@ -1,9 +1,20 @@
 import images from './images';
+import commentFiles from './getcomments';
 
-export default async (object) => {
+export default async (object, id) => {
+  const ul = document.createElement('ul');
+  /* eslint no-unused-vars:0 */
+  ul.id = 'commentlist';
+  const commentData = await commentFiles(id);
+  if (Array.isArray(commentData)) {
+    commentData.forEach((comment) => {
+      const li = document.createElement('li');
+      li.innerHTML = ` ${comment.username} : ${comment.comment}`;
+      ul.appendChild(li);
+    });
+  }
   // display the coin details
-  const section = document.getElementById('popup');
-  const element = document.createElement('div');
+  const coinDetails = document.getElementById('coin-details');
   const img = document.createElement('img');
   const name = document.createElement('h3');
   img.setAttribute('src', images(object.symbol));
@@ -15,42 +26,8 @@ export default async (object) => {
        <p>High price: ${object.highPrice}</p>
        <p>Low price: ${object.lastPrice}</p>
       </div>`;
-  element.innerHTML = img.outerHTML
+  coinDetails.innerHTML = img.outerHTML
    + name.outerHTML
-   + display;
-  element.className = 'imgpos';
-  //  display the comment form
-  const div = document.createElement('div');
-  const txt = `<div>
-        <form>
-          <div class="form-floating m-3">
-            <input
-              type="text"
-              class="form-control m-2"
-              id="name"
-              placeholder="name"
-            />
-            <label for="name">Your name</label>
-          </div>
-          <div class="form-floating m-3">
-            <input
-              type="text"
-              class="form-control m-2"
-              id="feedback"
-              placeholder="message"
-            />
-            <label for="message">Your message</label>
-          </div>
-          <button
-            type="submit"
-            id="submit-btn"
-            class="btn">
-            Submit
-          </button>
-        </form>
-      </div>`;
-  div.innerHTML = txt;
-  section.appendChild(element);
-  section.className = 'commentspage';
-  section.appendChild(div);
+   + display
+   + ul.outerHTML;
 };
