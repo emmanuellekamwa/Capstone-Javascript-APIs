@@ -16,6 +16,8 @@ import error from './error';
 export default async (arr, toGet) => {
   const title = document.getElementById('main-title');
   const parent = document.getElementById('main-section');
+  const commentPopUp = document.getElementById('popup');
+  commentPopUp.style.display = 'block';
   parent.innerHTML = ''; // Clear parent to prevent continuous appending
   const likeArr = await likes(); // Call for the involvment API (likes)
   toGet.forEach((element) => {
@@ -25,8 +27,6 @@ export default async (arr, toGet) => {
     const img = document.createElement('img');
     const buttonRes = document.createElement('button');
     const buttonCom = document.createElement('button');
-    const commentPopUp = document.getElementById('popup');
-
     buttonCom.addEventListener('click', async () => {
       coinDetails.innerHTML = '';
       formContainer.innerHTML = '';
@@ -42,7 +42,7 @@ export default async (arr, toGet) => {
             username: userName.value,
             comment: userMessage.value,
           };
-          if(userName.value != '' && userMessage != ''){
+          if (userName.value !== '' && userMessage !== '') {
             await add(commentData);
             const ul = document.getElementById('commentlist');
             const li = document.createElement('li');
@@ -50,10 +50,9 @@ export default async (arr, toGet) => {
             ul.appendChild(li);
             userName.value = '';
             userMessage.value = '';
-            error('Comment added!','green');
-          }
-          else {
-            error('Invalid input!','red');
+            error('Comment added!', 'green');
+          } else {
+            error('Invalid input!', 'red');
           }
         });
       }, 100);
@@ -128,7 +127,7 @@ export default async (arr, toGet) => {
       const reserve = document.getElementById('reserve');
 
       reserve.onclick = async () => {
-        if(nameInput.value != '' && startInput.value != '' && endInput.value != ''){
+        if (nameInput.value !== '' && startInput.value !== '' && endInput.value !== '') {
           await addReservation(element, nameInput.value, startInput.value, endInput.value);
           const restList = document.getElementById('reservationList');
           const newItem = document.createElement('li');
@@ -136,11 +135,10 @@ export default async (arr, toGet) => {
           counter.innerText = Number(counter.textContent) + 1;
           newItem.innerHTML = `<li>${startInput.value} - ${endInput.value} by ${nameInput.value}</li>`;
           restList.appendChild(newItem);
-          error('Comment added!','green');
-          }
-          else {
-            error('Invalid input!','red');
-          }
+          error('Comment added!', 'green');
+        } else {
+          error('Invalid input!', 'red');
+        }
       };
     });
     buttonRes.innerText = 'Reservations';

@@ -55,8 +55,8 @@ footer p {
 
 .popup {
   position: relative;
-  opacity: 0;
-  transition: all 0.3s;
+  transition: all 0.5s;
+  display: none;
 }
 
 .invisible {
@@ -65,8 +65,8 @@ footer p {
 }
 
 .visible {
-  visibility: visible !important;
-  opacity: 1 !important;
+  visibility: visible;
+  opacity: 1;
 }
 
 .reservation {
@@ -96,6 +96,7 @@ hr {
   left: 50%;
   transform: translateX(-50%);
   top: 5%;
+  overflow-y: scroll;
 }
 
 .coin-details {
@@ -121,6 +122,10 @@ hr {
 #main-title {
   text-align: center;
   font-size: 2em;
+}
+
+h4 {
+  margin: 10px;
 }
 
 .item {
@@ -263,13 +268,39 @@ form {
   align-items: center;
 }
 
+.com-form {
+  margin-top: 50px;
+}
+
+#reserve,
+#submit-btn {
+  outline: none;
+  border-radius: 8px;
+  background: #064806;
+  border: 0;
+  height: 20px;
+  width: 100px;
+  color: #fff;
+  margin-top: 5px;
+  transition: all 0.5s;
+}
+
+#submit-btn {
+  height: 30px;
+  margin-top: 20px;
+}
+
+#reserve:hover,
+#submit-btn:hover {
+  background: #3f3603ce;
+}
+
 form input {
   font-size: 1.2rem;
   width: 100%;
   margin: 5px;
   background: rgba(81, 81, 81, 0.87);
   outline: none;
-  border: 0;
   color: #fff;
   border: 2px solid rgb(0, 0, 0);
 }

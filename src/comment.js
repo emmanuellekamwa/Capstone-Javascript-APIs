@@ -7,6 +7,9 @@ export default async (object, id) => {
   /* eslint no-unused-vars:0 */
   ul.id = 'commentlist';
   const commentData = await commentFiles(id);
+  const commentCount = commentData.length;
+  const commentTitle = document.createElement('h4');
+  commentTitle.innerText = `Comments (${commentCount})`;
   if (Array.isArray(commentData)) {
     commentData.forEach((comment) => {
       const li = document.createElement('li');
@@ -34,10 +37,11 @@ export default async (object, id) => {
    + close.outerHTML
    + name.outerHTML
    + display
+   + commentTitle.outerHTML
    + ul.outerHTML;
-   const popupWindow = document.getElementById('popup');
-   const closePopup = document.getElementById('close');
-   closePopup.addEventListener('click', () => {
-     displayToggle(popupWindow);
-   });
+  const popupWindow = document.getElementById('popup');
+  const closePopup = document.getElementById('close');
+  closePopup.addEventListener('click', () => {
+    displayToggle(popupWindow);
+  });
 };

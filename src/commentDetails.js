@@ -1,7 +1,7 @@
 export default async () => {
   const form = document.getElementById('form-container');
   const txt = `<div>
-        <form>
+        <form class="com-form">
           <div class="form-floating ">
             <input
               type="text"
