@@ -1,6 +1,5 @@
 /* eslint no-unused-vars:0 */
 import _, { divide } from 'lodash';
-// import _ from 'lodash';
 import './style.css';
 
 import call from './getData';
