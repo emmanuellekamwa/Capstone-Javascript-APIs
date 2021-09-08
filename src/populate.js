@@ -4,6 +4,9 @@ import sendLike from './sendLike';
 import reservationsPopup from './reservationsPopup';
 import displayToggle from './toggle';
 import displayComment from './comment';
+import showReservations from './showReservations';
+import reservationsForm from './reservationsForm';
+import addReservation from './addReservation';
 
 export default async (arr,toGet) => {
   const title = document.getElementById('main-title');
@@ -75,9 +78,33 @@ export default async (arr,toGet) => {
     buttonCom.innerText = 'Comments';
     const popupWindow = document.getElementById('popup');
     popupWindow.style.display = 'none';
-    buttonRes.addEventListener('click', () => {
+    const coinDetails = document.getElementById('coin-details');
+    const formContainer = document.getElementById('form-container');
+    buttonRes.addEventListener('click', async () => {
+      coinDetails.innerHTML = '';
+      formContainer.innerHTML = '';
       reservationsPopup(arr[element], element);
+      await showReservations(coinDetails, element);
+      reservationsForm(element, formContainer);
+      const closePopup = document.getElementById('close');
+      closePopup.addEventListener('click', () => {
+        displayToggle(popupWindow);
+      });
       displayToggle(popupWindow);
+      const nameInput = document.getElementById('name');
+      const startInput = document.getElementById('start');
+      const endInput = document.getElementById('end');
+      const reserve = document.getElementById('reserve');
+
+      reserve.onclick = async () => {
+        await addReservation(element, nameInput.value, startInput.value, endInput.value);
+        const restList = document.getElementById('reservationList');
+        const newItem = document.createElement('li');
+        const counter = document.getElementById('counter');
+        counter.innerText = Number(counter.textContent) + 1;
+        newItem.innerHTML = `<li>${startInput.value} - ${endInput.value} by ${nameInput.value}</li>`;
+        restList.appendChild(newItem);
+      };
     });
     buttonRes.innerText = 'Reservations';
     li.append(img);

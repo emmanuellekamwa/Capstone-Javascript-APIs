@@ -1,5 +1,5 @@
 /* eslint no-unused-vars:0 */
-import _, { divide } from 'lodash';
+import _ from 'lodash';
 import './style.css';
 import add from './addcomment';
 

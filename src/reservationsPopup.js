@@ -1,15 +1,18 @@
 import images from './images';
-import showReservations from './showReservations';
 
-const reservationsPopup = async (object, id) => {
-  const popupWindow = document.getElementById('popup');
-  popupWindow.className = 'popup';
-  const reservation = document.createElement('div');
-  reservation.className = 'reservation';
+const reservationsPopup = async (object) => {
+  const coinDetails = document.getElementById('coin-details');
+  // popupWindow.className = 'popup';
+  // const reservation = document.createElement('div');
+  // reservation.className = 'reservation';
+  // reservation.setAttribute('id', 'reservation');
   const img = document.createElement('img');
-  const name = document.createElement('h3');
   img.setAttribute('src', images(object.symbol));
+  const name = document.createElement('h3');
   name.innerText = object.symbol;
+  const close = document.createElement('i');
+  close.className = 'far fa-times-circle';
+  close.setAttribute('id', 'close');
   const stats = document.createElement('div');
   stats.className = 'stats';
   const lastPrice = document.createElement('p');
@@ -24,11 +27,27 @@ const reservationsPopup = async (object, id) => {
   + openPrice.outerHTML
   + highPrice.outerHTML
   + lowPrice.outerHTML;
-  reservation.innerHTML = img.outerHTML
+  coinDetails.innerHTML = img.outerHTML
+  + close.outerHTML
   + name.outerHTML
   + stats.outerHTML;
-  showReservations(reservation, id);
-  popupWindow.appendChild(reservation);
+
+  // const closePopup = document.getElementById('close');
+  // console.log(closePopup);
+  // closePopup.addEventListener('click', () => {
+  //   console.log('test');
+  //   })
+  //   console.log(closePopup);
+  // const nameInput = document.getElementById('name');
+  // const startInput = document.getElementById('start');
+  // const endInput = document.getElementById('end');
+  // const reserve = document.getElementById('reserve');
+  // console.log(nameInput, startInput, endInput, reserve, id);
+
+  // reserve.onclick = async() => {
+  //   console.log('reservation confirmed');
+  //   await addReservation(id, nameInput.value, startInput.value, endInput.value);
+  // }
 };
 
 export default reservationsPopup;
