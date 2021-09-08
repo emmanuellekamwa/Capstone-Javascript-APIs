@@ -1,5 +1,5 @@
-/* eslint no-unused-vars:0, import/no-unresolved */
-import _, { divide } from 'lodash';
+/* eslint no-unused-vars:0 */
+import _ from 'lodash';
 import './style.css';
 
 import call from './getData';
