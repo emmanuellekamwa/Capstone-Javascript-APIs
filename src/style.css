@@ -21,7 +21,7 @@ ul {
 #main-logo {
   width: 100px;
   height: 100px;
-  background-image: url("./img/logo1.png");
+  background-image: url('./img/logo1.png');
   background-repeat: no-repeat;
 }
 
@@ -64,16 +64,24 @@ footer p {
   align-items: center;
 }
 
-.stats {
+.stats,
+.coin-details {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
-.stats * {
+.stats *,
+.coin-details {
   width: 50%;
   display: flex;
   justify-content: center;
+}
+
+.form {
+  display: contents;
+  justify-content: center;
+  text-align: center;
 }
 
 #main-section {

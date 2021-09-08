@@ -1,8 +1,13 @@
+/* eslint  no-use-before-define: 0 */
+import { set } from 'lodash'; /* eslint-disable-line */
 import check from './images';
 import likes from './likes';
 import sendLike from './sendLike';
 import reservationsPopup from './reservationsPopup';
 import displayToggle from './toggle';
+import displayComment from './comment';
+import displayForm from './commentDetails';
+import add from './addcomment';
 import showReservations from './showReservations';
 import reservationsForm from './reservationsForm';
 import addReservation from './addReservation';
@@ -20,6 +25,39 @@ export default async (arr) => {
     const img = document.createElement('img');
     const buttonRes = document.createElement('button');
     const buttonCom = document.createElement('button');
+    const commentPopUp = document.getElementById('popup');
+
+    commentPopUp.style.display = 'none';
+    buttonCom.addEventListener('click', async () => {
+      coinDetails.innerHTML = '';
+      formContainer.innerHTML = '';
+      displayComment(arr[element], element);
+      displayForm();
+      displayToggle(commentPopUp);
+      const submitBtn = document.getElementById('submit-btn');
+      setTimeout(() => {
+        submitBtn.addEventListener('click', async (e) => {
+          e.preventDefault();
+          const commentData = {
+            item_id: element,
+            username: userName.value,
+            comment: userMessage.value,
+          };
+          await add(commentData);
+          const ul = document.getElementById('commentlist');
+          const li = document.createElement('li');
+          li.innerText = `${commentData.username} : ${commentData.comment}`;
+          ul.appendChild(li);
+          userName.value = '';
+          userMessage.value = '';
+        });
+      }, 100);
+
+      const userName = document.getElementById('name');
+      const userMessage = document.getElementById('feedback');
+    });
+    buttonCom.className = 'btn';
+
     const heart = document.createElement('aside');
     heart.id = element;
     heart.innerHTML = '<i class="far fa-heart"></i>';
