@@ -3,6 +3,9 @@ import likes from './likes';
 import sendLike from './sendLike';
 import reservationsPopup from './reservationsPopup';
 import displayToggle from './toggle';
+import showReservations from './showReservations';
+import reservationsForm from './reservationsForm';
+import addReservation from './addReservation';
 
 export default async (arr) => {
   const toGet = [11, 12, 564, 98, 308, 190]; // Array of crypto to get
@@ -39,17 +42,32 @@ export default async (arr) => {
     });
     buttonCom.innerText = 'Comments';
     const popupWindow = document.getElementById('popup');
-    popupWindow.style.display = 'none';    
-    buttonRes.addEventListener('click', () => {
-      popupWindow.innerHTML = '';
+    popupWindow.style.display = 'none';
+    const coinDetails = document.getElementById('coin-details');
+    const formContainer = document.getElementById('form-container');
+    buttonRes.addEventListener('click', async () => {
+      coinDetails.innerHTML = '';
+      formContainer.innerHTML = '';
       reservationsPopup(arr[element], element);
-      // const closePopup = document.getElementById('close');
-      // console.log(closePopup);
-      // closePopup.addEventListener('click', (e) => {
-      //   console.log(e.target);
-      //   console.log('test');
-      //   })
-      displayToggle(popupWindow);      
+      await showReservations(coinDetails, element);
+      reservationsForm(element, formContainer);
+      const closePopup = document.getElementById('close');
+      closePopup.addEventListener('click', () => {
+        displayToggle(popupWindow);
+      });
+      displayToggle(popupWindow);
+      const nameInput = document.getElementById('name');
+      const startInput = document.getElementById('start');
+      const endInput = document.getElementById('end');
+      const reserve = document.getElementById('reserve');
+
+      reserve.onclick = async () => {
+        await addReservation(element, nameInput.value, startInput.value, endInput.value);
+        const restList = document.getElementById('reservationList');
+        const newItem = document.createElement('li');
+        newItem.innerHTML = `<li>${startInput.value} - ${endInput.value} by ${nameInput.value}</li>`;
+        restList.appendChild(newItem);
+      };
     });
     buttonRes.innerText = 'Reservations';
     li.append(img);
