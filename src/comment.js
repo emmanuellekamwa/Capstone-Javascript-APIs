@@ -1,9 +1,30 @@
 import images from './images';
+import commentFiles from './getcomments'
+import sendComment from './sendComment';
 
-export default async (object) => {
+export default async (object,id) => {
+  const ul = document.createElement('ul');
+  const commentData = commentFiles(id);
+
+  if (commentData.length){
+   commentData.forEach((comment) => {
+      const li = document.createElement('li');
+      const text = `
+        <div ">
+          ${comment.user} : ${comment.comment}
+        </div>
+      </div>`;
+      li.innerHTML = text;
+      ul.appendChild(li);
+    });
+  }
   // display the coin details
   const section = document.getElementById('popup');
+  section.innerHTML = '';
   const element = document.createElement('div');
+  const submitBtn = document.getElementById('submit-btn');
+  const userName = document.getElementById('user');
+   const userMessage = document.getElementById('feedback');
   const img = document.createElement('img');
   const name = document.createElement('h3');
   img.setAttribute('src', images(object.symbol));
@@ -18,7 +39,6 @@ export default async (object) => {
   element.innerHTML = img.outerHTML
    + name.outerHTML
    + display;
-  element.className = 'imgpos';
   //  display the comment form
   const div = document.createElement('div');
   const txt = `<div>
@@ -42,15 +62,17 @@ export default async (object) => {
             <label for="message">Your message</label>
           </div>
           <button
-            type="submit"
-            id="submit-btn"
-            class="btn">
-            Submit
+            type="button"
+            id="submit-btn">
+            Add comment
           </button>
         </form>
       </div>`;
   div.innerHTML = txt;
-  section.appendChild(element);
+  
   section.className = 'commentspage';
+  section.appendChild(element);
+  section.appendChild(ul);
   section.appendChild(div);
+  sendComment(submitBtn,userName,userMessage);
 };

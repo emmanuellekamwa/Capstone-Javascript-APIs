@@ -18,13 +18,13 @@ export default async (arr) => {
     const img = document.createElement('img');
     const buttonRes = document.createElement('button');
     const buttonCom = document.createElement('button');
-    const section = document.getElementById('popup');
-    section.style.display = 'none';
+    const commentPopUp = document.getElementById('popup');
+    commentPopUp.style.display = 'none';
     buttonCom.addEventListener('click', () => {
-      displayComment(arr[element]);
-      displayToggle(section);
+      displayComment(arr[element],element);
+      displayToggle(commentPopUp);
     });
-    buttonCom.className = 'submit-btn';
+    buttonCom.className = 'btn';
     const heart = document.createElement('aside');
     heart.id = element;
     heart.innerHTML = '<i class="far fa-heart"></i>';
