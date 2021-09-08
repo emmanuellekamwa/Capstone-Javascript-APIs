@@ -4,6 +4,8 @@ import sendLike from './sendLike';
 import reservationsPopup from './reservationsPopup';
 import displayToggle from './toggle';
 import displayComment from './comment';
+import displayForm from './commentDetails';
+import add from './addcomment';
 
 export default async (arr) => {
   const toGet = [11, 12, 564, 98, 308, 190]; // Array of crypto to get
@@ -19,12 +21,30 @@ export default async (arr) => {
     const buttonRes = document.createElement('button');
     const buttonCom = document.createElement('button');
     const commentPopUp = document.getElementById('popup');
+    const submitBtn = document.getElementById('submit-btn');
+    const userName = document.getElementById('name');
+    const userMessage = document.getElementById('feedback');
+
     commentPopUp.style.display = 'none';
-    buttonCom.addEventListener('click', () => {
-      displayComment(arr[element],element);
+    buttonCom.addEventListener('click', (e) => {
+      e.preventDefault();
+      displayComment(arr[element], element);
+      displayForm();
       displayToggle(commentPopUp);
+      submitBtn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const commentData = {
+          user: userName.value,
+          score: userMessage.value,
+        };
+        const commentAdded = await add(commentData);
+        if (commentAdded) {
+          // console.log('saved');
+        }
+      });
     });
     buttonCom.className = 'btn';
+
     const heart = document.createElement('aside');
     heart.id = element;
     heart.innerHTML = '<i class="far fa-heart"></i>';

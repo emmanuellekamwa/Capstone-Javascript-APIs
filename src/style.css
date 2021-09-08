@@ -37,13 +37,11 @@ footer p {
 
 /* Reservations popup */
 
-.popup,
-.comment {
+.popup {
   position: relative;
 }
 
-.reservation,
-.commentspage {
+.wrapper {
   background-color: white;
   border: 5px solid black;
   height: auto;
@@ -59,13 +57,15 @@ footer p {
   align-items: center;
 }
 
-.stats {
+.stats,
+.coin-details {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
-.stats * {
+.stats *,
+.coin-details {
   width: 50%;
   display: flex;
   justify-content: center;
