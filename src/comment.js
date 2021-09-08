@@ -6,9 +6,8 @@ export default async (object, id) => {
   /* eslint no-unused-vars:0 */
   ul.id = 'commentlist';
   const commentData = await commentFiles(id);
-  console.log(commentData)
- if (Array.isArray(commentData)){
-   commentData.forEach((comment) => {
+  if (Array.isArray(commentData)) {
+    commentData.forEach((comment) => {
       const li = document.createElement('li');
       li.innerHTML = ` ${comment.username} : ${comment.comment}`;
       ul.appendChild(li);
