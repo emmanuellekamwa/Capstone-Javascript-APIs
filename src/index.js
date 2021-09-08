@@ -1,4 +1,4 @@
-/* eslint no-unused-vars:0 */
+/* eslint no-unused-vars:0, import/no-unresolved */
 import _, { divide } from 'lodash';
 import './style.css';
 
