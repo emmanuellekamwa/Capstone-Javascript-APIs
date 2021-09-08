@@ -65,6 +65,8 @@ export default async (arr) => {
         await addReservation(element, nameInput.value, startInput.value, endInput.value);
         const restList = document.getElementById('reservationList');
         const newItem = document.createElement('li');
+        const counter = document.getElementById('counter');
+        counter.innerText = Number(counter.textContent) + 1;
         newItem.innerHTML = `<li>${startInput.value} - ${endInput.value} by ${nameInput.value}</li>`;
         restList.appendChild(newItem);
       };
