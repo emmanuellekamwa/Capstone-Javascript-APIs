@@ -9,6 +9,7 @@ import add from './addcomment';
 import showReservations from './showReservations';
 import reservationsForm from './reservationsForm';
 import addReservation from './addReservation';
+import { set } from 'lodash';
 
 export default async (arr) => {
   const toGet = [11, 12, 564, 98, 308, 190]; // Array of crypto to get
@@ -24,27 +25,39 @@ export default async (arr) => {
     const buttonRes = document.createElement('button');
     const buttonCom = document.createElement('button');
     const commentPopUp = document.getElementById('popup');
-    const submitBtn = document.getElementById('submit-btn');
-    const userName = document.getElementById('name');
-    const userMessage = document.getElementById('feedback');
-
+   
     commentPopUp.style.display = 'none';
-    buttonCom.addEventListener('click', (e) => {
-      e.preventDefault();
+    buttonCom.addEventListener('click', async() => {
+      coinDetails.innerHTML = '';
+      formContainer.innerHTML = '';
       displayComment(arr[element], element);
       displayForm();
       displayToggle(commentPopUp);
-      submitBtn.addEventListener('click', async (e) => {
-        e.preventDefault();
-        const commentData = {
-          user: userName.value,
-          score: userMessage.value,
-        };
-        const commentAdded = await add(commentData);
-        if (commentAdded) {
-          // console.log('saved');
-        }
-      });
+      const submitBtn = document.getElementById('submit-btn');
+      setTimeout(() => {
+        submitBtn.addEventListener('click', async (e) => {
+          console.log('test');
+          e.preventDefault();
+          const commentData = {
+            item_id: element,
+            username: userName.value,
+            comment: userMessage.value,
+          };
+           await add(commentData);
+           const ul = document.getElementById('commentlist');
+           const li = document.createElement('li');
+           li.innerText = `${commentData.username} : ${commentData.comment}`;
+           ul.appendChild(li);
+           userName.value = '';
+           userMessage.value = '';
+
+        });
+      }, 100);
+      
+      const userName = document.getElementById('name');
+      const userMessage = document.getElementById('feedback');
+      console.log(submitBtn);
+      
     });
     buttonCom.className = 'btn';
 
