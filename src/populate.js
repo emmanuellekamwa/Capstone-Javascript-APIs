@@ -39,11 +39,17 @@ export default async (arr) => {
     });
     buttonCom.innerText = 'Comments';
     const popupWindow = document.getElementById('popup');
-    popupWindow.style.display = 'none';
+    popupWindow.style.display = 'none';    
     buttonRes.addEventListener('click', () => {
       popupWindow.innerHTML = '';
       reservationsPopup(arr[element], element);
-      displayToggle(popupWindow);
+      // const closePopup = document.getElementById('close');
+      // console.log(closePopup);
+      // closePopup.addEventListener('click', (e) => {
+      //   console.log(e.target);
+      //   console.log('test');
+      //   })
+      displayToggle(popupWindow);      
     });
     buttonRes.innerText = 'Reservations';
     li.append(img);
