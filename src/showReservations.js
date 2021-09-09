@@ -1,9 +1,10 @@
 import getReservations from './getReservations';
+import countReservations from './countReservations';
 
 const showReservations = async (reserveCont, id) => {
   const reservations = await getReservations(id);
   const heading = document.createElement('h4');
-  heading.innerHTML = `Reservations <span id='counter'>(${reservations.length || 0})</span>`;
+  heading.innerHTML = `Reservations <span id='counter'>(${countReservations(reservations)})</span>`;
   const list = document.createElement('ul');
   list.id = 'reservationList';
   if (Array.isArray(reservations)) {

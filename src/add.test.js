@@ -5,39 +5,42 @@
 
 import call from './getData';
 import populate from './populate';
-import check from './images';
-import likes from './likes';
-import sendLike from './sendLike';
-import reservationsPopup from './reservationsPopup';
-import displayToggle from './toggle';
-import displayComment from './comment';
-// import { toGet } from './toGet';
 
-global.fetch = jest.fn(() => Promise.resolve({
+global.fetch = jest.fn(() => Promise.resolve({ // API result mock
   json: () => Promise.resolve(
     [
       {
-        symbol: 111111111111,
+        symbol: 1,
         id: 101,
       },
       {
-        symbol: 2222222222222,
+        symbol: 2,
         id: 102,
 
       },
       {
-        symbol: 3333333333333,
+        symbol: 3,
         id: 103,
       },
     ],
   ),
 }));
 
-it('Number of elements in homepage', async () => {
-  const toGet = [0, 1];
-  document.body.innerHTML = '<h1 id="main-title">AAAAA</h1><ul id="main-section"</ul><section id="popup"></section>';
-  const data = await call();
-  const items = await populate(data, toGet);
-  //   console.log(items);
-  expect(items).toBe(2);
+describe('Edit/Checkbox/Swap/Clear', () => {
+  test('Check number of elements from function return', async () => {
+    const toGet = [0, 1];
+    document.body.innerHTML = '<h1 id="main-title">Sample title to be replaced</h1><ul id="main-section"</ul><section id="popup"></section>';
+    const data = await call();
+    const items = await populate(data, toGet);
+    expect(items).toBe(2);
+  });
+
+  test('Check number of elements from DOM manipulation count', async () => {
+    const toGet = [0, 1];
+    document.body.innerHTML = '<h1 id="main-title">Sample title to be replaced</h1><ul id="main-section"</ul><section id="popup"></section>';
+    const data = await call();
+    const items = await populate(data, toGet);
+    const title = document.getElementById('main-title').innerHTML;
+    expect(title).toBe('Total coins:2');
+  });
 });

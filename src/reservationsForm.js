@@ -10,6 +10,7 @@ const reservationsForm = (id, reserveContainer) => {
   setAttributes(nameInput, {
     placeholder: 'Your name',
     id: 'name',
+    maxlength: '15',
   });
   const startInput = document.createElement('input');
   setAttributes(startInput, {

@@ -19,7 +19,7 @@ export default async (arr, toGet) => {
   const commentPopUp = document.getElementById('popup');
   commentPopUp.style.display = 'block';
   parent.innerHTML = ''; // Clear parent to prevent continuous appending
-  const likeArr = await likes(); // Call for the involvment API (likes)
+  const likeArr = await likes(); // Call for the involvement API (likes)
   toGet.forEach((element) => {
     const li = document.createElement('li');
     li.classList.add('item');
@@ -46,8 +46,10 @@ export default async (arr, toGet) => {
             await add(commentData);
             const ul = document.getElementById('commentlist');
             const li = document.createElement('li');
+            const hr = document.createElement('hr');
             li.innerText = `${commentData.username} : ${commentData.comment}`;
             ul.appendChild(li);
+            ul.append(hr);
             userName.value = '';
             userMessage.value = '';
             error('Comment added!', 'green');
@@ -125,7 +127,6 @@ export default async (arr, toGet) => {
       const startInput = document.getElementById('start');
       const endInput = document.getElementById('end');
       const reserve = document.getElementById('reserve');
-
       reserve.onclick = async () => {
         if (nameInput.value !== '' && startInput.value !== '' && endInput.value !== '') {
           await addReservation(element, nameInput.value, startInput.value, endInput.value);
@@ -133,7 +134,7 @@ export default async (arr, toGet) => {
           const newItem = document.createElement('li');
           const counter = document.getElementById('counter');
           counter.innerText = Number(counter.textContent) + 1;
-          newItem.innerHTML = `<li>${startInput.value} - ${endInput.value} by ${nameInput.value}</li>`;
+          newItem.innerHTML = `<li>${startInput.value} - ${endInput.value} by ${nameInput.value}</li><hr>`;
           restList.appendChild(newItem);
           error('Comment added!', 'green');
         } else {
