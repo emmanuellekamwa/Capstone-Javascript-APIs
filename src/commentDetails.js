@@ -8,6 +8,7 @@ export default async () => {
               class="form-control "
               id="name"
               placeholder="Username"
+              maxlength = "15"
             />
           </div>
           <div class="form-floating">
@@ -16,6 +17,7 @@ export default async () => {
               class="form-control "
               id="feedback"
               placeholder="Comment"
+              maxlength = "100"
             />
           </div>
           <button
