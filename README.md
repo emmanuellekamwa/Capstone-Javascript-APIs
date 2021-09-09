@@ -39,7 +39,9 @@ In case you want the project to run on your local machine and not the live demo
   - Github : [@ReshyResh](https://github.com/ReshyResh/)
 
 **Aleksandar Ivezic**
-  - Github : [@ShinobiWarior](https://github.com/ShinobiWarior/)
+- GitHub: [Aleksandar Ivezic](https://github.com/ShinobiWarior)
+- Twitter: [@Aivezic](https://twitter.com/Aivezic)
+- LinkedIn: [Aleksandar Ivezic](https://www.linkedin.com/in/aleksandar-ivezic/)
 
 **Daniel Maina**
   - Github : [@danmainah](https://github.com/danmainah/)
@@ -49,6 +51,11 @@ In case you want the project to run on your local machine and not the live demo
 
 Contributions, issues, and feature requests are welcome!
 
+Feel free to check the [issues page](https://github.com/ReshyResh/Capstone-Javascript-APIs/issues/).
+
 # Show your support
 
 Give a ⭐️ if you like this project!
+
+## Acknowledgments
+- This project was inspired by [Microverse](https://www.microverse.org/?grsf=w9rx3c).
