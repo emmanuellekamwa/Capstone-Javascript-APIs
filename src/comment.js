@@ -1,13 +1,14 @@
 import images from './images';
 import commentFiles from './getcomments';
 import displayToggle from './toggle';
+import counter from './commentCounter';
 
 export default async (object, id) => {
   const ul = document.createElement('ul');
   /* eslint no-unused-vars:0 */
   ul.id = 'commentlist';
   const commentData = await commentFiles(id);
-  const commentCount = commentData.length;
+  const commentCount = counter(commentData);
   const commentTitle = document.createElement('h4');
   commentTitle.innerText = `Comments (${commentCount})`;
   if (Array.isArray(commentData)) {
