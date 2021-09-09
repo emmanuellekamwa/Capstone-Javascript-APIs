@@ -1,6 +1,6 @@
-
+.stylelintrc.json
 .hintrc
-
+.eslintrc.json
 node_modules/
 coverage/
-package-lock.json
+
