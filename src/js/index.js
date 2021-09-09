@@ -1,6 +1,6 @@
 /* eslint no-unused-vars:0 */
 import _ from 'lodash'; /* eslint-disable-line */
-import './style.css';
+import '../style.css';
 
 import call from './getData';
 import populate from './populate';

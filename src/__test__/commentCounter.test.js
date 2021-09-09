@@ -1,4 +1,4 @@
-import counter from './commentCounter';
+import counter from '../js/commentCounter';
 
 const data = [
   {

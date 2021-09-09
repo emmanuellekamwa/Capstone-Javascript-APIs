@@ -5,7 +5,7 @@ const addReservation = async (id, name, start, end) => {
     date_start: start,
     date_end: end,
   };
-  fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/pXlrPxLwgnIhKy0gtUs5/reservations/', {
+  fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/kILi6A14lgBXPIsGn5MP/reservations/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

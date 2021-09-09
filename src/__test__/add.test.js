@@ -3,8 +3,8 @@
  */
 /* eslint no-unused-vars: 0 */
 
-import call from './getData';
-import populate from './populate';
+import call from '../js/getData';
+import populate from '../js/populate';
 
 global.fetch = jest.fn(() => Promise.resolve({ // API result mock
   json: () => Promise.resolve(

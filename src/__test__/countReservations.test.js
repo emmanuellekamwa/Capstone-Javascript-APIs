@@ -1,4 +1,4 @@
-import countReservations from '../countReservations';
+import countReservations from '../js/countReservations';
 
 describe('Reservations count', () => {
   it('retuns number of reservations', () => {

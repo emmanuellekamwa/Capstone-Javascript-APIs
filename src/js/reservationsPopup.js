@@ -2,10 +2,6 @@ import images from './images';
 
 const reservationsPopup = async (object) => {
   const coinDetails = document.getElementById('coin-details');
-  // popupWindow.className = 'popup';
-  // const reservation = document.createElement('div');
-  // reservation.className = 'reservation';
-  // reservation.setAttribute('id', 'reservation');
   const img = document.createElement('img');
   img.setAttribute('src', images(object.symbol));
   const name = document.createElement('h3');
@@ -31,23 +27,6 @@ const reservationsPopup = async (object) => {
   + close.outerHTML
   + name.outerHTML
   + stats.outerHTML;
-
-  // const closePopup = document.getElementById('close');
-  // console.log(closePopup);
-  // closePopup.addEventListener('click', () => {
-  //   console.log('test');
-  //   })
-  //   console.log(closePopup);
-  // const nameInput = document.getElementById('name');
-  // const startInput = document.getElementById('start');
-  // const endInput = document.getElementById('end');
-  // const reserve = document.getElementById('reserve');
-  // console.log(nameInput, startInput, endInput, reserve, id);
-
-  // reserve.onclick = async() => {
-  //   console.log('reservation confirmed');
-  //   await addReservation(id, nameInput.value, startInput.value, endInput.value);
-  // }
 };
 
 export default reservationsPopup;
