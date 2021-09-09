@@ -1,4 +1,5 @@
 import getReservations from './getReservations';
+import countReservations from './countReservations';
 
 const showReservations = async (reserveCont, id) => {
   const reservations = await getReservations(id);

@@ -25,4 +25,4 @@ describe('Reservations count', () => {
     const reservations = [];
     expect(countReservations(reservations)).toEqual(0);
   });
-})
+});
