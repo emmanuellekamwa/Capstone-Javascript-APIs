@@ -3,4 +3,4 @@
 .eslintrc.json
 node_modules/
 coverage/
-
+package-lock.json

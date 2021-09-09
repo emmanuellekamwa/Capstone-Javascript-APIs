@@ -24,7 +24,7 @@ const data = [
 const empty = [];
 describe ('Message counter', () => {
     it ('counts the number of comments',() => {
-        expect(counter(data)).toBe(4);
+        expect(counter(data)).toBe(5);
     })
     it ('counts the number of comments',() => {
         expect(counter(empty)).toBe(0);
