@@ -23,8 +23,11 @@ Capstone project for the second module of Microverse (JavaScript).
   - Responsive design.
   - Animated content
 
+# Video Presentation
+### Click [here](https://www.loom.com/share/c47b76c29fd344c2864c71e9407aaf8f) to watch the video of the team presenting the project!
+
 # Live demo
-### Click [here](https://reshyresh.github.io/Capstone-Javascript-APIs/) for the live demo!
+### Click [here](https://reshyresh.github.io/Capstone-Javascript-APIs/docs/index.html) for the live demo!
 
 # Installation 
 
