@@ -37,19 +37,20 @@ In case you want the project to run on your local machine and not the live demo
 # Authors 👤
 **Robert Baiesita**
   - Github : [@ReshyResh](https://github.com/ReshyResh/)
+  - LinkedIn: [Robert Baiesita](https://www.linkedin.com/in/reshyresh/)
 
 **Aleksandar Ivezic**
-- GitHub: [Aleksandar Ivezic](https://github.com/ShinobiWarior)
-- Twitter: [@Aivezic](https://twitter.com/Aivezic)
-- LinkedIn: [Aleksandar Ivezic](https://www.linkedin.com/in/aleksandar-ivezic/)
+  - Github : [@ShinobiWarior](https://github.com/ShinobiWarior/)
+  - Twitter: [@danmainah](https://twitter.com/danmainah)
+  - LinkedIn: [Daniel Maina](https://www.linkedin.com/in/daniel-maina-315a38191/)
 
 **Daniel Maina**
   - Github : [@danmainah](https://github.com/danmainah/)
+  - Twitter: [@Aivezic](https://twitter.com/Aivezic)
+  - LinkedIn: [Aleksandar Ivezic](https://www.linkedin.com/in/aleksandar-ivezic/)
 
 
 # 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/ReshyResh/Capstone-Javascript-APIs/issues/).
 
