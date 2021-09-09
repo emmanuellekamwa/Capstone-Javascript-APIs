@@ -19,7 +19,7 @@ export default async (arr, toGet) => {
   const commentPopUp = document.getElementById('popup');
   commentPopUp.style.display = 'block';
   parent.innerHTML = ''; // Clear parent to prevent continuous appending
-  const likeArr = await likes(); // Call for the involvment API (likes)
+  const likeArr = await likes(); // Call for the involvement API (likes)
   toGet.forEach((element) => {
     const li = document.createElement('li');
     li.classList.add('item');
