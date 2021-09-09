@@ -8,7 +8,7 @@ const showReservations = async (reserveCont, id) => {
   list.id = 'reservationList';
   if (Array.isArray(reservations)) {
     reservations.forEach((reservation) => {
-      list.innerHTML += `<li>${reservation.date_start} - ${reservation.date_end} by ${reservation.username}</li>`;
+      list.innerHTML += `<li>${reservation.date_start} - ${reservation.date_end} by ${reservation.username}</li><hr>`;
     });
   }
   reserveCont.innerHTML += heading.outerHTML

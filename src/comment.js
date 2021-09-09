@@ -1,56 +1,47 @@
 import images from './images';
+import commentFiles from './getcomments';
+import displayToggle from './toggle';
 
-export default async (object) => {
+export default async (object, id) => {
+  const ul = document.createElement('ul');
+  /* eslint no-unused-vars:0 */
+  ul.id = 'commentlist';
+  const commentData = await commentFiles(id);
+  const commentCount = commentData.length;
+  const commentTitle = document.createElement('h4');
+  commentTitle.innerText = `Comments (${commentCount})`;
+  if (Array.isArray(commentData)) {
+    commentData.forEach((comment) => {
+      const li = document.createElement('li');
+      li.innerHTML = `${comment.creation_date} - ${comment.username} : ${comment.comment}<hr>`;
+      ul.appendChild(li);
+    });
+  }
   // display the coin details
-  const section = document.getElementById('popup');
-  const element = document.createElement('div');
+  const close = document.createElement('i');
+  close.className = 'far fa-times-circle';
+  close.setAttribute('id', 'close');
+  const coinDetails = document.getElementById('coin-details');
   const img = document.createElement('img');
   const name = document.createElement('h3');
   img.setAttribute('src', images(object.symbol));
   name.innerText = object.symbol;
 
   const display = `<div class='stats'>  
-       <p>Last price: ${object.lastPrice}</p>
-       <p>Open price: ${object.openPrice}</p>
-       <p>High price: ${object.highPrice}</p>
-       <p>Low price: ${object.lastPrice}</p>
+       <p>Last price: ${parseFloat(object.lastPrice).toFixed(3)}</p>
+       <p>Open price: ${parseFloat(object.openPrice).toFixed(3)}</p>
+       <p>High price: ${parseFloat(object.highPrice).toFixed(3)}</p>
+       <p>Low price: ${parseFloat(object.lastPrice).toFixed(3)}</p>
       </div>`;
-  element.innerHTML = img.outerHTML
+  coinDetails.innerHTML = img.outerHTML
+   + close.outerHTML
    + name.outerHTML
-   + display;
-  element.className = 'imgpos';
-  //  display the comment form
-  const div = document.createElement('div');
-  const txt = `<div>
-        <form>
-          <div class="form-floating m-3">
-            <input
-              type="text"
-              class="form-control m-2"
-              id="name"
-              placeholder="name"
-            />
-            <label for="name">Your name</label>
-          </div>
-          <div class="form-floating m-3">
-            <input
-              type="text"
-              class="form-control m-2"
-              id="feedback"
-              placeholder="message"
-            />
-            <label for="message">Your message</label>
-          </div>
-          <button
-            type="submit"
-            id="submit-btn"
-            class="btn">
-            Submit
-          </button>
-        </form>
-      </div>`;
-  div.innerHTML = txt;
-  section.appendChild(element);
-  section.className = 'commentspage';
-  section.appendChild(div);
+   + display
+   + commentTitle.outerHTML
+   + ul.outerHTML;
+  const popupWindow = document.getElementById('popup');
+  const closePopup = document.getElementById('close');
+  closePopup.addEventListener('click', () => {
+    displayToggle(popupWindow);
+  });
 };
