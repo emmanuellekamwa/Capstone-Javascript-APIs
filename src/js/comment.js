@@ -10,7 +10,7 @@ export default async (object, id) => {
   const commentData = await commentFiles(id);
   const commentCount = counter(commentData);
   const commentTitle = document.createElement('h4');
-  commentTitle.innerText = `Comments (${commentCount})`;
+  commentTitle.innerHTML = `Comments (<span id='commentsCounter'>${commentCount}</span>)`;
   if (Array.isArray(commentData)) {
     commentData.forEach((comment) => {
       const li = document.createElement('li');
