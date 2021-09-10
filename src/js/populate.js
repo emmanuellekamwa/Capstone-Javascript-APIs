@@ -51,6 +51,8 @@ export default async (arr, toGet) => {
             li.innerText = `${today} - ${commentData.username} : ${commentData.comment}`;
             ul.appendChild(li);
             ul.append(hr);
+            const commentsCounter = document.getElementById('commentsCounter');
+            commentsCounter.innerText = Number(commentsCounter.textContent) + 1;
             userName.value = '';
             userMessage.value = '';
             error('Comment added!', 'green');
